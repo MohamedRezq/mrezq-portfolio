@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed Rezq, Senior Full-Stack Engineer</title>
+<meta name="description" content="Senior Full-Stack Engineer with 9+ years building e-commerce, SaaS and AI products with React, Next.js, TypeScript, Node.js and Python.">
+<meta property="og:title" content="Mohamed Rezq, Senior Full-Stack Engineer">
+<meta property="og:description" content="9+ years building e-commerce, SaaS and AI products. React, Next.js, TypeScript, Node.js, Python, AWS and Azure.">
+<meta property="og:url" content="https://mrezq.dev">
+<meta name="theme-color" content="#0E7490">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%230E7490'/><stop offset='1' stop-color='%234F46E5'/></linearGradient></defs><rect width='64' height='64' rx='14' fill='url(%23g)'/><text x='32' y='41' font-family='Arial' font-weight='700' font-size='24' text-anchor='middle' fill='white'>MR</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{
+  --bg:#FFFFFF; --bg2:#F8FAFC; --card:#FFFFFF; --ink:#0F172A; --body:#475467; --soft:#667085; --line:#E4E7EC;
+  --accent:#0E7490; --accent2:#4F46E5; --accent-bg:#ECFEFF; --accent-ink:#155E75;
+  --grad:linear-gradient(120deg,#0E7490,#4F46E5);
+  --shadow:0 1px 2px rgba(16,24,40,.04),0 4px 12px rgba(16,24,40,.05);
+  --shadow-h:0 2px 4px rgba(16,24,40,.05),0 16px 32px rgba(14,116,144,.12);
+  --spot:rgba(14,116,144,.07);
+  --font:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg:#0B1220; --bg2:#0F1828; --card:#111B2E; --ink:#F1F5F9; --body:#A7B1C2; --soft:#8592A6; --line:#1F2A3D;
+  --accent:#22D3EE; --accent2:#818CF8; --accent-bg:rgba(34,211,238,.1); --accent-ink:#67E8F9;
+  --grad:linear-gradient(120deg,#22D3EE,#818CF8);
+  --shadow:0 1px 2px rgba(0,0,0,.3); --shadow-h:0 16px 36px rgba(0,0,0,.45);
+  --spot:rgba(34,211,238,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1220; --bg2:#0F1828; --card:#111B2E; --ink:#F1F5F9; --body:#A7B1C2; --soft:#8592A6; --line:#1F2A3D;
+  --accent:#22D3EE; --accent2:#818CF8; --accent-bg:rgba(34,211,238,.1); --accent-ink:#67E8F9;
+  --grad:linear-gradient(120deg,#22D3EE,#818CF8);
+  --shadow:0 1px 2px rgba(0,0,0,.3); --shadow-h:0 16px 36px rgba(0,0,0,.45); --spot:rgba(34,211,238,.06);
+}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:16px;line-height:1.65;color:var(--body);background:var(--bg);-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* spotlight following the cursor */
+.spot{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(600px circle at var(--x,50%) var(--y,30%),var(--spot),transparent 70%)}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:60}
+
+.shell{position:relative;z-index:1;max-width:1220px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:400px 1fr;gap:80px}
+
+/* ---------- sidebar ---------- */
+.side{position:sticky;top:0;height:100vh;padding:56px 0 32px;display:flex;flex-direction:column}
+.side::before{content:"";position:absolute;inset:0 -40px 0 -200px;z-index:-1;background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(90deg,#000 40%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 40%,transparent);opacity:.7}
+.avatar{position:relative;width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font-weight:800;font-size:22px;color:#fff;background:var(--grad);margin-bottom:26px;box-shadow:0 10px 24px rgba(14,116,144,.3)}
+.avatar::after{content:"";position:absolute;inset:-5px;border-radius:22px;border:1.5px solid var(--accent);opacity:.35;animation:ring 3s ease-in-out infinite}
+@keyframes ring{50%{inset:-9px;opacity:0}}
+h1{font-size:46px;line-height:1.05;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.role{margin-top:12px;font-size:19px;font-weight:600;color:var(--ink);min-height:1.6em}
+.role .typed{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role .caret{display:inline-block;width:2px;height:1.05em;background:var(--accent);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.bio{margin-top:14px;max-width:34ch}
+.badge{display:inline-flex;align-items:center;gap:9px;margin-top:20px;padding:6px 13px;border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);background:var(--accent-bg);color:var(--accent-ink);border-radius:999px;font-size:13.5px;font-weight:500;align-self:flex-start}
+.badge i{position:relative;width:8px;height:8px;border-radius:50%;background:#10B981}
+.badge i::after{content:"";position:absolute;inset:0;border-radius:50%;background:#10B981;animation:ping 1.8s ease-out infinite}
+@keyframes ping{to{transform:scale(2.6);opacity:0}}
+.meta{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;font-size:13.5px;color:var(--soft)}
+.meta span{display:inline-flex;align-items:center;gap:6px}
+.meta svg{width:15px;height:15px}
+
+nav.toc{margin-top:30px;display:grid;gap:2px}
+nav.toc a{display:flex;align-items:center;gap:12px;padding:7px 0;font-size:14px;font-weight:500;color:var(--soft);transition:color .2s}
+nav.toc a .bar{width:24px;height:2px;border-radius:2px;background:currentColor;opacity:.45;transition:width .3s,opacity .3s,background .3s}
+nav.toc a:hover,nav.toc a.on{color:var(--ink)}
+nav.toc a.on .bar,nav.toc a:hover .bar{width:52px;opacity:1}
+nav.toc a.on .bar{background:var(--grad)}
+
+.links{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;font-size:14px;font-weight:600;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s}
+.btn svg{width:17px;height:17px}
+.btn.primary{background:var(--grad);color:#fff;box-shadow:0 8px 20px rgba(79,70,229,.25)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(79,70,229,.35)}
+.btn.ghost{border:1px solid var(--line);color:var(--ink);background:var(--card)}
+.btn.ghost:hover{border-color:var(--accent);transform:translateY(-2px)}
+.ico{position:relative;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:var(--ink);background:var(--card);transition:transform .2s,border-color .2s,color .2s;cursor:pointer}
+.ico:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent)}
+.ico svg{width:18px;height:18px}
+.ico[data-tip]:hover::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:500;padding:4px 8px;border-radius:6px;background:var(--ink);color:var(--bg)}
+
+/* ---------- main ---------- */
+main{padding:64px 0 48px;min-width:0}
+section{padding-bottom:96px;scroll-margin-top:32px}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.sec-head .si{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--accent-bg);color:var(--accent)}
+.sec-head .si svg{width:18px;height:18px}
+h2{font-size:22px;font-weight:700;letter-spacing:-.015em;color:var(--ink)}
+.sec-head .rule{flex:1;height:1px;background:var(--line)}
+.lead{font-size:17.5px;line-height:1.8}
+.lead strong{color:var(--ink);font-weight:600}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.stat{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.stat:hover{transform:translateY(-3px);box-shadow:var(--shadow-h)}
+.stat b{display:block;font-size:30px;font-weight:800;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;font-size:13px;color:var(--soft);line-height:1.4;margin-top:2px}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.svc{position:relative;padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.svc::before{content:"";position:absolute;inset:0;background:radial-gradient(240px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--accent) 12%,transparent),transparent 70%);opacity:0;transition:opacity .3s}
+.svc:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
+.svc:hover::before{opacity:1}
+.svc .si{position:relative;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;color:#fff;background:var(--grad);margin-bottom:14px}
+.svc .si svg{width:20px;height:20px}
+.svc h3{position:relative;font-size:16px;color:var(--ink);font-weight:600;margin-bottom:6px}
+.svc p{position:relative;font-size:14.5px;line-height:1.6}
+
+/* timeline */
+.timeline{position:relative;padding-left:72px}
+.timeline::before{content:"";position:absolute;left:23px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent),var(--accent2) 60%,var(--line))}
+.job{position:relative;margin-bottom:22px}
+.node{position:absolute;left:-72px;top:4px;width:48px;height:48px;border-radius:14px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 6px var(--bg);transition:transform .3s}
+.job:hover .node{transform:scale(1.08)}
+.node img{width:40px;height:40px;object-fit:contain}
+.mono{width:100%;height:100%;display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff;background:var(--c)}
+.card{padding:22px 24px;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s,border-color .25s}
+.job:hover .card{transform:translateX(4px);box-shadow:var(--shadow-h);border-color:color-mix(in srgb,var(--c) 45%,var(--line))}
+.job-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start}
+.job h3{font-size:17px;font-weight:600;color:var(--ink);line-height:1.35}
+.job h3 .co{color:var(--c);font-weight:600}
+:root[data-theme="dark"] .job h3 .co{filter:brightness(1.5)}
+.date{font-size:12.5px;font-weight:600;color:var(--accent-ink);background:var(--accent-bg);padding:3px 10px;border-radius:999px;white-space:nowrap}
+.place{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--soft);margin:4px 0 12px}
+.place svg{width:14px;height:14px}
+.job ul{list-style:none;display:grid;gap:7px}
+.job li{position:relative;padding-left:20px;font-size:15px}
+.job li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;background:no-repeat center/10px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314B8A6' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E")}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;padding:4px 10px 4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--ink)}
+.tag svg{width:14px;height:14px}
+
+/* highlights */
+.hl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.hl{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--card);transition:transform .25s,box-shadow .25s}
+.hl:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
+.hl .si{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--hc-bg);color:var(--hc)}
+.hl .si svg{width:22px;height:22px}
+.hl b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.hl h3{font-size:15px;font-weight:600;color:var(--ink);margin:2px 0 4px}
+.hl p{font-size:14px;line-height:1.55}
+
+/* tech stack */
+.stack-group{margin-bottom:22px}
+.stack-group h3{font-size:13.5px;font-weight:600;color:var(--soft);margin-bottom:10px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(122px,1fr));gap:10px}
+.tile{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:14px;font-weight:500;color:var(--ink);transition:transform .2s,border-color .2s,box-shadow .2s}
+.tile svg{width:22px;height:22px;flex:none;transition:transform .3s}
+.tile:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow-h)}
+.tile:hover svg{transform:rotate(-8deg) scale(1.12)}
+:root[data-theme="dark"] .tile .inv svg,:root[data-theme="dark"] .tag .inv svg{filter:invert(1)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .inv svg{filter:invert(1)}}
+.inv{display:contents}
+.txt-ico{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-size:10px;font-weight:800;color:#fff;flex:none}
+
+/* education */
+.edu{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.edu div{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.edu .si{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--accent-bg);color:var(--accent);margin-bottom:12px}
+.edu .si svg{width:19px;height:19px}
+.edu b{display:block;color:var(--ink);font-weight:600;font-size:15px;line-height:1.4}
+.edu span{font-size:13.5px;color:var(--soft)}
+
+/* contact */
+.cta{position:relative;padding:36px;border-radius:20px;background:var(--card);overflow:hidden;isolation:isolate}
+.cta::before{content:"";position:absolute;inset:-2px;border-radius:22px;background:conic-gradient(from var(--a,0deg),#0E7490,#4F46E5,#14B8A6,#0E7490);z-index:-2;animation:spin 6s linear infinite}
+.cta::after{content:"";position:absolute;inset:1.5px;border-radius:19px;background:var(--card);z-index:-1}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes spin{to{--a:360deg}}
+.cta h3{font-size:28px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.cta p{margin:8px 0 22px;max-width:54ch}
+.cta .row{display:flex;flex-wrap:wrap;gap:10px}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--soft);padding-top:32px}
+
+.totop{position:fixed;right:22px;bottom:22px;z-index:50;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s}
+.totop.show{opacity:1;pointer-events:auto;transform:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.intro>*{animation:rise .7s ease both}
+.intro>*:nth-child(2){animation-delay:.08s}.intro>*:nth-child(3){animation-delay:.16s}.intro>*:nth-child(4){animation-delay:.24s}.intro>*:nth-child(5){animation-delay:.32s}.intro>*:nth-child(6){animation-delay:.4s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+
+
+/* orbit */
+.hero-art{position:relative;width:160px;height:160px;margin:-44px 0 8px -48px}
+.hero-art .avatar{position:absolute;left:48px;top:48px;margin:0}
+.orbit{position:absolute;inset:0;animation:orbit 26s linear infinite}
+.hero-art:hover .orbit{animation-play-state:paused}
+.orb{position:absolute;left:50%;top:50%;width:28px;height:28px;margin:-14px;border-radius:9px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;place-items:center;transform:rotate(calc(var(--i)*60deg)) translate(66px) rotate(calc(var(--i)*-60deg))}
+.orb svg{width:16px;height:16px;animation:orbit 26s linear infinite reverse}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.orbit .orb{transition:transform .3s}
+/* stat icons */
+.st-ic{float:right;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--accent-bg);color:var(--accent);transition:transform .4s}
+.st-ic svg{width:16px;height:16px}
+.stat:hover .st-ic{transform:rotate(12deg) scale(1.1)}
+/* marquee */
+.marquee{margin-top:22px;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--card);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq-track{display:flex;gap:34px;width:max-content;padding:14px 0;animation:mq 38s linear infinite}
+.marquee:hover .mq-track{animation-play-state:paused}
+.mq-track span{display:grid;place-items:center;width:30px;height:30px;transition:transform .3s,filter .3s;filter:grayscale(1) opacity(.65)}
+.mq-track span:hover{filter:none;transform:scale(1.3)}
+.mq-track svg{width:28px;height:28px}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* draw icons on reveal */
+.rv .si svg *{stroke-dasharray:80;stroke-dashoffset:80}
+.rv.in .si svg *{animation:draw 1.2s ease forwards .2s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sec-head:hover .si svg,.edu div:hover .si svg{animation:wiggle .5s ease}
+@keyframes wiggle{25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
+/* timeline grows with scroll */
+.timeline::before{transform-origin:top;transform:scaleY(var(--tl,0));transition:transform .15s linear}
+.job .node{transition:transform .3s,box-shadow .3s}
+.job.in .node{box-shadow:0 0 0 6px var(--bg),0 0 0 8px color-mix(in srgb,var(--c) 35%,transparent)}
+/* tilt + glow for all cards */
+.tilt{transform-style:preserve-3d;will-change:transform}
+.glow{position:relative;overflow:hidden}
+.glow::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(220px circle at var(--mx,50%) var(--my,-20%),color-mix(in srgb,var(--accent) 14%,transparent),transparent 70%);opacity:0;transition:opacity .3s;border-radius:inherit}
+.glow:hover::after{opacity:1}
+/* name shimmer */
+h1{background:linear-gradient(100deg,var(--ink) 40%,var(--accent) 50%,var(--ink) 60%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s ease-in-out infinite}
+@keyframes shimmer{0%,60%{background-position:100% 0}100%{background-position:-50% 0}}
+.btn.primary{position:relative}
+
+@media (min-width:1061px) and (max-height:860px){.side{position:relative;height:auto;min-height:100vh}.links{margin-top:32px}}
+.tile img{width:22px;height:22px;flex:none;transition:transform .3s}.tile:hover img{transform:rotate(-8deg) scale(1.12)}.tag img{width:14px;height:14px}.orb img{width:16px;height:16px;animation:orbit 26s linear infinite reverse}.mq-track img{width:28px;height:28px}
+:root[data-theme="dark"] .inv img{filter:invert(1)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .inv img{filter:invert(1)}}
+/* mobile top bar */
+.topbar{display:none}
+
+@media (max-width:1060px){
+  .shell{grid-template-columns:1fr;gap:0;padding:0 22px}
+  .side{position:relative;height:auto;padding:88px 0 8px}
+  .side::before{inset:0 -22px}
+  nav.toc{display:none}
+  .links{margin-top:26px}
+  main{padding-top:48px}
+  .topbar{display:flex;position:fixed;top:0;left:0;right:0;z-index:55;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .topbar .nm{font-weight:700;color:var(--ink)}
+  .topbar nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .topbar nav a{font-size:13px;font-weight:500;padding:6px 10px;border-radius:8px;color:var(--soft);white-space:nowrap}
+  .topbar nav a.on{background:var(--accent-bg);color:var(--accent-ink)}
+  .side .theme{display:none}
+}
+@media (max-width:760px){
+  .topbar .nm{display:none}
+  h1{font-size:38px}
+  .hero-art{transform:scale(.85);transform-origin:left top}
+  .stats{grid-template-columns:1fr 1fr}
+  .services,.edu,.hl-grid{grid-template-columns:1fr}
+  .timeline{padding-left:0}
+  .timeline::before{display:none}
+  .node{position:static;margin-bottom:-24px;margin-left:18px;z-index:2;box-shadow:0 0 0 5px var(--bg)}
+  .card{padding:34px 18px 18px}
+  section{padding-bottom:72px}
+  .cta{padding:26px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .rv .si svg *{stroke-dashoffset:0}
+  .timeline::before{transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div class="spot" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="topbar">
+  <span class="nm">Mohamed Rezq</span>
+  <nav aria-label="Sections (mobile)"><a href="#about">About</a><a href="#experience">Experience</a><a href="#highlights">Highlights</a><a href="#stack">Stack</a><a href="#contact">Contact</a></nav>
+  <button class="ico theme-btn" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+</header>
+
+<div class="shell">
+<aside class="side">
+  <div class="intro" style="display:flex;flex-direction:column">
+    <div class="hero-art" aria-hidden="true"><div class="avatar">MR</div><div class="orbit"><span class="orb" style="--i:0" data-ic="react"></span><span class="orb" style="--i:1" data-ic="nextjs-icon"></span><span class="orb" style="--i:2" data-ic="typescript-icon"></span><span class="orb" style="--i:3" data-ic="nodejs-icon"></span><span class="orb" style="--i:4" data-ic="python"></span><span class="orb" style="--i:5" data-ic="aws"></span></div></div>
+    <h1>Mohamed Rezq</h1>
+    <p class="role"><span class="typed">Senior Full-Stack Engineer</span><span class="caret"></span></p>
+    <p class="bio">I build fast, reliable web products with React, Next.js, Node.js and Python, and I've led frontend teams in e-commerce at scale.</p>
+    <span class="badge"><i></i>Open to roles in Europe and the UK</span>
+    <div class="meta">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Cairo, Egypt</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M8 6V4h8v2"/></svg>EU Blue Card eligible</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>2-month notice</span>
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="Sections">
+    <a href="#about" class="on"><span class="bar"></span>About</a>
+    <a href="#experience"><span class="bar"></span>Experience</a>
+    <a href="#highlights"><span class="bar"></span>Highlights</a>
+    <a href="#stack"><span class="bar"></span>Tech stack</a>
+    <a href="#education"><span class="bar"></span>Education</a>
+    <a href="#contact"><span class="bar"></span>Contact</a>
+  </nav>
+
+  <div class="links">
+    <a class="btn primary" href="cv.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download CV</a>
+    <a class="ico" data-tip="Email" href="mailto:mrezq.dev@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+    <a class="ico" data-tip="LinkedIn" href="https://www.linkedin.com/in/mrezq" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+    <a class="ico" data-tip="GitHub" href="https://github.com/MohamedRezq" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg></a>
+    <button class="ico theme-btn theme" data-tip="Dark mode" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</aside>
+
+<main>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="sec-head rv"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><h2>About</h2><span class="rule"></span></div>
+    <p class="lead rv">I'm a senior full-stack engineer with <strong>9+ years</strong> of experience building e-commerce, SaaS and AI-powered products. For four years I led the frontend team at <strong>Panda Retail</strong>, owning the architecture of a platform used by <strong>5 million customers</strong>. Since then I've built Next.js storefronts and RAG features at <strong>Floward</strong>, and I'm now designing a data platform for company leadership at <strong>PwC</strong>.</p>
+    <div class="stats">
+      <div class="stat rv" style="--d:.05s"><span class="st-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span><b data-count="9" data-suffix="+">9+</b><span>years building for the web</span></div>
+      <div class="stat rv" style="--d:.1s"><span class="st-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg></span><b data-count="5" data-suffix="M+">5M+</b><span>customers on platforms I led</span></div>
+      <div class="stat rv" style="--d:.15s"><span class="st-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></span><b data-count="200" data-suffix="+">200+</b><span>business clients integrated</span></div>
+      <div class="stat rv" style="--d:.2s"><span class="st-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg></span><b data-count="40" data-suffix="%">40%</b><span>faster page loads at PwC</span></div>
+    </div>
+    <div class="marquee rv" aria-label="Technologies I use"><div class="mq-track" data-marquee="react|nextjs-icon|typescript-icon|javascript|nodejs-icon|python|fastapi-icon|graphql|postgresql|mongodb-icon|redis|aws|microsoft-azure|docker-icon|github-actions|shopify|strapi-icon|contentful|stripe|openai-icon|tailwindcss-icon|figma"></div></div>
+    <div class="services">
+      <div class="svc rv" style="--d:.05s"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 9l2 2-2 2M12 13h4"/></svg></span><h3>Frontend architecture</h3><p>React and Next.js apps that load fast, rank well and stay maintainable as teams grow.</p></div>
+      <div class="svc rv" style="--d:.1s"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01"/></svg></span><h3>Backend and cloud</h3><p>Node.js and Python services, queues and caching on AWS and Azure, built to scale.</p></div>
+      <div class="svc rv" style="--d:.15s"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18.5 9.4l-4.7 1.8L12 16l-1.8-4.8-4.7-1.8 4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><h3>AI features</h3><p>RAG search, LLM integrations and AI-assisted workflows that customers actually use.</p></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="sec-head rv"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><h2>Experience</h2><span class="rule"></span></div>
+    <div class="timeline">
+      <article class="job rv" style="--c:#D04A02">
+        <div class="node" data-mono="PwC" data-domain="pwc.com" data-logo="logos/pwc.png|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYQ_ueo0l5OXEEXN1Un0XWkJH_hHvFA86kEOxSFBwUev7UR_bfewBsxzI&amp;s=10"></div>
+        <div class="card">
+          <div class="job-top"><h3>Senior Software Engineer · <span class="co">PwC</span></h3><span class="date">2026 – Present</span></div>
+          <p class="place"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Cairo, Egypt</p>
+          <ul>
+            <li>Architected and built a data analysis platform for company leadership with Next.js, TypeScript, Python (FastAPI) and PostgreSQL on Azure.</li>
+            <li>Designed the PostgreSQL schema and queries so executive reports load in under a second.</li>
+            <li>Moved heavy bulk-data jobs to background workers and message queues, keeping the app responsive.</li>
+            <li>Cut page load time by over 40% by profiling and fixing slow API endpoints.</li>
+          </ul>
+          <div class="tags" data-tags="nextjs-icon:Next.js|typescript-icon:TypeScript|fastapi-icon:FastAPI|postgresql:PostgreSQL|microsoft-azure:Azure"></div>
+        </div>
+      </article>
+      <article class="job rv" style="--c:#7C3AED">
+        <div class="node" data-mono="F" data-domain="floward.com" data-logo="logos/floward.png|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzwku-Mdkr9g1cBloMX8Md0sd1sZ3hg8qoOIuIvU2mHg7swMt7PDoFHi1I&amp;s=10"></div>
+        <div class="card">
+          <div class="job-top"><h3>Senior Full-Stack Engineer · <span class="co">Floward</span></h3><span class="date">2024 – 2026</span></div>
+          <p class="place"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Dubai, UAE · Remote</p>
+          <ul>
+            <li>Improved search ranking of the Next.js storefront through technical SEO: SSR/ISR, structured data and Core Web Vitals.</li>
+            <li>Built GenAI features using RAG (LLMs with vector search) over the MongoDB product catalogue.</li>
+            <li>Introduced A/B testing and gradual releases with GrowthBook to guide product decisions.</li>
+            <li>Integrated the Strapi headless CMS so content teams publish without developer help.</li>
+            <li>Built and maintained Node.js (TypeScript) microservices behind the storefront.</li>
+          </ul>
+          <div class="tags" data-tags="nextjs-icon:Next.js|nodejs-icon:Node.js|openai-icon:RAG / LLMs|mongodb-icon:MongoDB|strapi-icon:Strapi"></div>
+        </div>
+      </article>
+      <article class="job rv" style="--c:#0F766E">
+        <div class="node" data-mono="P" data-domain="panda.com.sa" data-logo="logos/panda.png|https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Panda_Retail_Company_Logo.svg/512px-Panda_Retail_Company_Logo.svg.png"></div>
+        <div class="card">
+          <div class="job-top"><h3>Frontend Lead · <span class="co">Panda Retail</span></h3><span class="date">2020 – 2024</span></div>
+          <p class="place"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Jeddah, Saudi Arabia · Remote</p>
+          <ul>
+            <li>Led the frontend team building multi-language React and Next.js storefronts and an admin console for catalogue and fulfilment.</li>
+            <li>Owned the architecture of an e-commerce platform serving 5M+ customers.</li>
+            <li>Designed Node.js microservices on AWS with SQS queues and Redis caching across 80+ branches.</li>
+            <li>Built secure login and payment services behind API gateways with multiple payment providers.</li>
+            <li>Set code-review and testing standards and mentored engineers through regular 1:1s.</li>
+          </ul>
+          <div class="tags" data-tags="react:React|nextjs-icon:Next.js|aws:AWS|aws-sqs:SQS|redis:Redis"></div>
+        </div>
+      </article>
+      <article class="job rv" style="--c:#334155">
+        <div class="node" data-mono="AS" data-logo="logos/alphasaas.png|https://images.softwaresuggest.com/software_logo/alphasaas-20241028115137.png"></div>
+        <div class="card">
+          <div class="job-top"><h3>Full-Stack Developer · <span class="co">AlphaSaas</span></h3><span class="date">2017 – 2020</span></div>
+          <p class="place"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>India · Remote</p>
+          <ul>
+            <li>Built a unified dashboard integrating Salesforce, QuickBooks and SailPoint through REST APIs.</li>
+            <li>Designed multi-tenant data models and caching for 200+ business clients.</li>
+            <li>Built scheduled scraping jobs for data sources without an API.</li>
+            <li>Deployed on AWS with infrastructure-as-code and automated rollbacks.</li>
+          </ul>
+          <div class="tags" data-tags="salesforce:Salesforce|javascript:JavaScript|aws:AWS|aws-lambda:Serverless"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section id="highlights">
+    <div class="sec-head rv"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.5 5.7 21l1.5-7L2 9.3l7-.8z"/></svg></span><h2>Highlights</h2><span class="rule"></span></div>
+    <div class="hl-grid">
+      <div class="hl rv" style="--hc:#0E7490;--hc-bg:rgba(14,116,144,.1)"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><div><b>5M+ customers</b><h3>E-commerce at scale</h3><p>Frontend architecture for Panda Retail's storefronts and admin tools across 80+ branches.</p></div></div>
+      <div class="hl rv" style="--d:.08s;--hc:#4F46E5;--hc-bg:rgba(79,70,229,.1)"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h8l-1 8 10-12h-8z"/></svg></span><div><b>Under 1 second</b><h3>Executive reporting</h3><p>Redesigned PostgreSQL schema and queries, and moved heavy jobs to queues at PwC.</p></div></div>
+      <div class="hl rv" style="--d:.16s;--hc:#DB2777;--hc-bg:rgba(219,39,119,.1)"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span><div><b>RAG in production</b><h3>AI product search</h3><p>LLM and vector-search features over Floward's product catalogue.</p></div></div>
+      <div class="hl rv" style="--d:.24s;--hc:#D97706;--hc-bg:rgba(217,119,6,.1)"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></span><div><b>200+ clients</b><h3>Enterprise integrations</h3><p>Salesforce, QuickBooks and SailPoint connected in one multi-tenant dashboard.</p></div></div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div class="sec-head rv"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5M3 17l9 5 9-5"/></svg></span><h2>Tech stack</h2><span class="rule"></span></div>
+    <div class="stack-group rv"><h3>Frontend</h3><div class="tiles" data-tiles="react:React|nextjs-icon:Next.js|typescript-icon:TypeScript|javascript:JavaScript|tailwindcss-icon:Tailwind CSS|redux:Redux|html-5:HTML5|css-3:CSS3"></div></div>
+    <div class="stack-group rv"><h3>Backend and data</h3><div class="tiles" data-tiles="nodejs-icon:Node.js|python:Python|fastapi-icon:FastAPI|graphql:GraphQL|postgresql:PostgreSQL|mongodb-icon:MongoDB|redis:Redis|prisma:Prisma"></div></div>
+    <div class="stack-group rv"><h3>Cloud and DevOps</h3><div class="tiles" data-tiles="aws:AWS|microsoft-azure:Azure|docker-icon:Docker|github-actions:GitHub Actions|vercel-icon:Vercel|git-icon:Git"></div></div>
+    <div class="stack-group rv"><h3>AI, commerce and tools</h3><div class="tiles" data-tiles="openai-icon:OpenAI / LLMs|shopify:Shopify|strapi-icon:Strapi|contentful:Contentful|stripe:Stripe|salesforce:Salesforce|figma:Figma|jest:Jest"></div></div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="sec-head rv"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><h2>Education and languages</h2><span class="rule"></span></div>
+    <div class="edu">
+      <div class="rv"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><b>MSc, Electronics and Communications Engineering</b><span>Cairo University · in progress</span></div>
+      <div class="rv" style="--d:.08s"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6.5a2.5 2.5 0 0 0 0 5H20"/></svg></span><b>BSc, Engineering</b><span>Cairo University · 2012 – 2017</span></div>
+      <div class="rv" style="--d:.16s"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><b>Languages</b><span>English (fluent) · Arabic (native)</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="cta rv">
+      <h3>Let's build something great</h3>
+      <p>I'm looking for senior full-stack, frontend lead or engineering manager roles in Europe and the UK. Email is the fastest way to reach me.</p>
+      <div class="row">
+        <a class="btn primary" href="mailto:mrezq.dev@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>mrezq.dev@gmail.com</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/mrezq" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="cv.html" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+    <footer><span>© <span id="y">2026</span> Mohamed Rezq</span><span>Built with care in Cairo</span></footer>
+  </section>
+</main>
+</div>
+
+<button class="ico totop" aria-label="Back to top" onclick="scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script>
+const KNOWN=new Set(["react", "nextjs-icon", "typescript-icon", "javascript", "nodejs-icon", "python", "fastapi-icon", "postgresql", "mongodb-icon", "redis", "aws", "microsoft-azure", "docker-icon", "github-actions", "graphql", "shopify", "strapi-icon", "contentful", "salesforce", "openai-icon", "tailwindcss-icon", "figma", "vercel-icon", "aws-sqs", "aws-lambda", "sass", "jest", "git-icon", "html-5", "css-3", "prisma", "stripe", "redux", "vitest", "playwright"]);
+const MONO=['nextjs-icon','vercel-icon','openai-icon','github-actions','prisma','strapi-icon'];
+const icon=k=>{if(!KNOWN.has(k))return '';const s='<img class="ti" src="https://api.iconify.design/logos:'+k+'.svg" alt="" loading="lazy">';return MONO.includes(k)?'<span class="inv">'+s+'</span>':s};
+document.querySelectorAll('[data-tags]').forEach(el=>{el.innerHTML=el.dataset.tags.split('|').map(p=>{const[k,n]=p.split(':');return '<span class="tag">'+icon(k)+n+'</span>'}).join('')});
+document.querySelectorAll('[data-tiles]').forEach(el=>{el.innerHTML=el.dataset.tiles.split('|').map(p=>{const[k,n]=p.split(':');return '<div class="tile">'+icon(k)+'<span>'+n+'</span></div>'}).join('')});
+
+// company logos: local file -> company favicon -> monogram
+document.querySelectorAll('.node').forEach(n=>{
+  const mono=()=>{n.innerHTML='<div class="mono">'+n.dataset.mono+'</div>'};
+  const srcs=[...(n.dataset.logo||'').split('|'),n.dataset.domain&&('https://www.google.com/s2/favicons?domain='+n.dataset.domain+'&sz=128')].filter(Boolean);
+  if(!srcs.length)return mono();
+  const img=new Image();img.alt='';let i=0;
+  img.onload=()=>{if(img.naturalWidth<=16){next()}else{n.innerHTML='';n.appendChild(img)}};
+  const next=()=>{if(i<srcs.length){img.src=srcs[i++]}else mono()};
+  img.onerror=next;mono();next();
+});
+
+document.getElementById('y').textContent=new Date().getFullYear();
+
+// typed role
+const roles=['Senior Full-Stack Engineer','Frontend Lead','React & Next.js specialist','Builder of AI-powered products'];
+const typed=document.querySelector('.typed');const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!reduce){let r=0,c=roles[0].length,del=true;setTimeout(function tick(){const w=roles[r];
+  if(del){c--;typed.textContent=w.slice(0,c);if(c===0){del=false;r=(r+1)%roles.length}setTimeout(tick,c===0?300:35)}
+  else{const w2=roles[r];c++;typed.textContent=w2.slice(0,c);if(c===w2.length){del=true;setTimeout(tick,2400)}else setTimeout(tick,60)}},2600)}
+
+// theme toggle
+const root=document.documentElement;
+const isDark=()=>root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+document.querySelectorAll('.theme-btn').forEach(b=>b.addEventListener('click',()=>{root.dataset.theme=isDark()?'light':'dark';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}}));
+
+// spotlight + card glow
+const spot=document.querySelector('.spot');
+addEventListener('pointermove',e=>{spot.style.setProperty('--x',e.clientX+'px');spot.style.setProperty('--y',e.clientY+'px')},{passive:true});
+document.querySelectorAll('.svc').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}));
+
+
+// fill orbit + marquee icons
+document.querySelectorAll('[data-ic]').forEach(el=>el.innerHTML=icon(el.dataset.ic));
+document.querySelectorAll('[data-marquee]').forEach(el=>{const h=el.dataset.marquee.split('|').map(k=>'<span title="'+k.replace(/-icon$/,'')+'">'+icon(k)+'</span>').join('');el.innerHTML=h+h});
+// tilt + glow on cards (desktop pointers only)
+const fine=matchMedia('(pointer:fine)').matches;
+document.querySelectorAll('.stat,.hl,.tile,.card,.edu div,.svc').forEach(c=>{
+  c.classList.add('glow');
+  c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
+    if(fine&&!reduce&&!c.classList.contains('card')){c.classList.add('tilt');c.style.transform=`perspective(700px) rotateX(${(y/r.height-.5)*-7}deg) rotateY(${(x/r.width-.5)*7}deg) translateY(-3px)`}});
+  c.addEventListener('pointerleave',()=>{c.style.transform=''});
+});
+// magnetic buttons
+if(fine&&!reduce)document.querySelectorAll('.btn.primary,.ico').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.25}px)`});b.addEventListener('pointerleave',()=>{b.style.transform=''})});
+// timeline line grows with scroll
+const tl=document.querySelector('.timeline');
+const growTl=()=>{if(!tl)return;const r=tl.getBoundingClientRect(),vh=innerHeight;tl.style.setProperty('--tl',Math.max(0,Math.min(1,(vh*.75-r.top)/r.height)))};
+addEventListener('scroll',growTl,{passive:true});growTl();
+
+// reveal + count-up
+const count=el=>{const t=+el.dataset.count,s=el.dataset.suffix||'';if(reduce){return}let st=null;const f=ts=>{st??=ts;const p=Math.min((ts-st)/1100,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(count);io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// active section + progress + back to top
+const navs=[...document.querySelectorAll('nav.toc a, .topbar nav a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navs.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-35% 0px -60% 0px'});
+document.querySelectorAll('main section').forEach(s=>so.observe(s));
+const bar=document.querySelector('.progress'),toTop=document.querySelector('.totop');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';toTop.classList.toggle('show',h.scrollTop>700)},{passive:true});
+</script>
+</body>
+</html>
